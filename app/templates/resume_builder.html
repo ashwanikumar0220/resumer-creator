@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Resume · {{ selected_template.name }}</title>
+  <link rel="stylesheet" href="/static/css/resume-builder.css">
+</head>
+
+<body data-template-id="{{ selected_template.id }}" data-resume-source="{{ resume_source | default('template') }}">
+  <header class="builder-topbar">
+    <a class="wordmark" href="/home">resume<span>.</span></a>
+    <div class="topbar-center"><span class="template-chip">{{ selected_template.name }} template</span><span
+        class="save-status" id="save-status">Live preview ready</span></div>
+    <div class="topbar-actions"><a class="exit-link" href="/create-resume">Change template</a><button
+        class="primary-button" id="print-button" type="button">Print / Save PDF</button></div>
+  </header>
+
+  <div id="company-guidance-banner" class="company-guidance-banner" hidden>
+    <div>
+      <strong id="company-guidance-title">Company resume guidance</strong>
+      <p id="company-guidance-description"></p>
+    </div>
+    <button type="button" id="dismiss-company-guidance" aria-label="Dismiss guidance">
+      ×
+    </button>
+  </div>
+
+  <main class="builder-layout">
+    <section class="form-panel">
+      <div class="builder-intro">
+        <p class="eyebrow">YOUR RESUME · STEP BY STEP</p>
+        <h1>Let's build your<br><span>next opportunity.</span></h1>
+        <p>Only one section at a time. Your preview updates as you type.</p>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-meta"><span id="step-label">Step 1 of 5</span><span id="progress-percent">20%</span></div>
+        <div class="progress-track">
+          <div id="progress-bar"></div>
+        </div>
+        <div class="step-dots" id="step-dots"><span
+            class="active"></span><span></span><span></span><span></span><span></span></div>
+      </div>
+
+      <form id="resume-form" novalidate>
+        <section class="wizard-step active" data-step="0">
+          <div class="step-heading"><span class="step-number">01</span>
+            <div>
+              <h2>Personal details</h2>
+              <p>Start with the basics recruiters need to know.</p>
+            </div>
+          </div>
+          <div class="field-stack">
+            <label class="field">Full name<input data-path="personal.full_name" maxlength="120" autocomplete="name"
+                placeholder="e.g. Alex Morgan"></label>
+            <label class="field">Professional title<input data-path="personal.job_title" maxlength="160"
+                placeholder="e.g. Software Developer"></label>
+            <div class="two-fields"><label class="field">Email<input data-path="personal.email" type="email"
+                  maxlength="254" autocomplete="email" placeholder="you@example.com"></label><label
+                class="field">Phone<input data-path="personal.phone" maxlength="40" autocomplete="tel"
+                  placeholder="+91 ..."></label></div>
+            <label class="field">Location<input data-path="personal.location" maxlength="180"
+                autocomplete="address-level2" placeholder="City, Country"></label>
+            <div class="two-fields"><label class="field">Website <span class="optional">Optional</span><input
+                  data-path="personal.website" maxlength="500" placeholder="https://..."></label><label
+                class="field">LinkedIn <span class="optional">Optional</span><input data-path="personal.linkedin"
+                  maxlength="500" placeholder="LinkedIn profile URL"></label></div>
+
+            <label class="field">
+              Professional summary
+              <span class="optional">You can add this now or later</span>
+
+              <textarea data-path="personal.summary" rows="4" maxlength="5000"
+                placeholder="A short introduction about your strengths and career goals..."></textarea>
+
+              <button type="button" class="secondary-button" id="ai-improve-summary">
+                ✨ Improve with AI
+              </button>
+
+              <p id="ai-assistant-status" role="status" aria-live="polite"></p>
+            </label>
+
+          </div>
+        </section>
+
+        <section class="wizard-step" data-step="1" hidden>
+          <div class="step-heading"><span class="step-number">02</span>
+            <div>
+              <h2>Education</h2>
+              <p>Add your degrees, institutions and academic details.</p>
+            </div>
+          </div>
+          <div id="education-list" class="repeat-list"></div>
+          <button class="add-entry" type="button" data-add="education">＋ Add another education</button>
+        </section>
+
+        <section class="wizard-step" data-step="2" hidden>
+          <div class="step-heading"><span class="step-number">03</span>
+            <div>
+              <h2>Experience</h2>
+              <p>Show the work and impact you've had so far.</p>
+            </div>
+          </div>
+          <div id="experience-list" class="repeat-list"></div>
+          <button class="add-entry" type="button" data-add="experience">＋ Add another experience</button>
+        </section>
+
+        <section class="wizard-step" data-step="3" hidden>
+          <div class="step-heading"><span class="step-number">04</span>
+            <div>
+              <h2>Projects & skills</h2>
+              <p>Highlight projects and the tools you can use.</p>
+            </div>
+          </div>
+          <div id="projects-list" class="repeat-list"></div>
+          <button class="add-entry" type="button" data-add="projects">＋ Add another project</button>
+          <label class="field skills-field">Skills <span class="optional">Separate skills with commas</span><textarea
+              id="skills-input" rows="3" placeholder="Python, FastAPI, HTML, CSS"></textarea></label>
+        </section>
+
+        <section class="wizard-step" data-step="4" hidden>
+          <div class="step-heading"><span class="step-number">05</span>
+            <div>
+              <h2>Final details</h2>
+              <p>Add certifications, languages and any extra achievements.</p>
+            </div>
+          </div>
+          <div class="subsection-title">Certifications</div>
+          <div id="certifications-list" class="repeat-list"></div>
+          <button class="add-entry" type="button" data-add="certifications">＋ Add certification</button>
+          <div class="field-stack final-fields">
+            <label class="field">Languages <span class="optional">Separate with commas</span><input id="languages-input"
+                placeholder="English, Hindi"></label>
+            <label class="field">Achievements <span class="optional">Separate with commas</span><textarea
+                id="achievements-input" rows="3" placeholder="Awards, competitions, recognitions..."></textarea></label>
+          </div>
+          <div class="subsection-title">Custom section</div>
+          <div id="custom_sections-list" class="repeat-list"></div>
+          <button class="add-entry" type="button" data-add="custom_sections">＋ Add custom section</button>
+        </section>
+
+        <div class="form-error" id="form-error" role="alert"></div>
+        <div class="wizard-controls">
+          <button type="button" class="secondary-button" id="back-button" disabled>← Back</button>
+          <button type="button" class="primary-button next-button" id="next-button">Next step →</button>
+        </div>
+      </form>
+      <p class="privacy-note">Your details are rendered as text, not executable HTML. This version keeps the working
+        draft in this browser tab; cloud saving can be added separately.</p>
+    </section>
+
+    <aside class="preview-panel">
+      <div class="preview-heading">
+        <div><span class="preview-indicator"></span><strong>Live resume preview</strong></div><span class="a4-label">A4
+          · {{ selected_template.name }}</span>
+      </div>
+      <div class="preview-stage">
+        <div id="resume-preview" class="resume-paper">
+          <div class="empty-preview">
+            <div class="empty-icon">✦</div>
+            <h2>Your resume will appear here</h2>
+            <p>Start with your name and professional details. The preview will build as you fill in the form.</p>
+          </div>
+        </div>
+      </div>
+      <div class="preview-footer"><span>Changes update automatically</span><span id="preview-state">Waiting for your
+          details</span></div>
+    </aside>
+  </main>
+
+
+  <script id="initial-resume" type="application/json">{{ resume_json | safe }}</script>
+
+  <script src="/static/js/resume-builder.js?v=4" defer></script>
+
+</body>
+
+</html>

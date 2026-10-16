@@ -1,0 +1,548 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: #f4f5f7;
+
+    font-family: Arial, sans-serif;
+
+    color: #222;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar-container {
+    width: 100%;
+
+    min-height: 70px;
+
+    padding: 0 35px;
+
+    background: white;
+
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.navbar-brand {
+    font-size: 25px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.navbar-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.nav-button {
+    padding: 8px 18px;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+.login-button {
+    background: white;
+
+    border: 1px solid #333;
+
+    color: #222;
+}
+
+
+.signup-button {
+    background: #222;
+
+    border: 1px solid #222;
+
+    color: white;
+}
+
+
+.login-button:hover {
+    background: #f2f2f2;
+}
+
+
+.signup-button:hover {
+    background: #444;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.ats-container {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 50px 25px 80px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   PAGE TITLE
+========================================= */
+
+.page-title {
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 700;
+}
+
+
+.page-description {
+    margin: 10px 0 35px;
+
+    color: #666;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   UPLOAD CARD
+========================================= */
+
+.upload-card {
+    width: 100%;
+
+    max-width: 450px;
+
+    margin: auto;
+
+    padding: 35px 25px;
+
+    background: white;
+
+    border: 2px dashed #bbb;
+
+    border-radius: 15px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+.upload-icon {
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #f0f0f0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 35px;
+}
+
+
+.upload-card h2 {
+    margin: 0 0 8px;
+
+    font-size: 21px;
+}
+
+
+.upload-card p {
+    margin: 0 0 20px;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+.choose-file-button {
+    padding: 10px 20px;
+
+    border: 1px solid #333;
+
+    border-radius: 7px;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+
+.choose-file-button:hover {
+    background: #222;
+
+    color: white;
+}
+
+
+.file-name {
+    margin-top: 15px !important;
+
+    margin-bottom: 0 !important;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   CHECK ATS BUTTON
+========================================= */
+
+.check-ats-button {
+    margin-top: 25px;
+
+    padding: 12px 30px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+.check-ats-button:hover:not(:disabled) {
+    background: #444;
+}
+
+
+.check-ats-button:disabled {
+    background: #aaa;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading-section {
+    margin-top: 35px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    border: 1px solid #ddd;
+}
+
+
+.loading-section p {
+    margin: 15px 0 0;
+
+    color: #666;
+}
+
+
+.spinner {
+    width: 35px;
+
+    height: 35px;
+
+    margin: auto;
+
+    border: 4px solid #ddd;
+
+    border-top-color: #222;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   RESULT SECTION
+========================================= */
+
+.result-section {
+    width: 100%;
+
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.5fr;
+
+    gap: 20px;
+
+    text-align: left;
+}
+
+
+/* =========================================
+   SCORE CARD
+========================================= */
+
+.score-card {
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+.score-card h2 {
+    margin: 0;
+
+    font-size: 20px;
+}
+
+
+.ats-score {
+    margin-top: 20px;
+
+    font-size: 55px;
+
+    font-weight: 700;
+}
+
+
+.score-card p {
+    margin: 0;
+
+    color: #666;
+}
+
+
+/* =========================================
+   CATEGORY CARD
+========================================= */
+
+.category-card {
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 15px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+.category-card h2 {
+    margin: 0 0 25px;
+
+    font-size: 20px;
+}
+
+
+.category-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 15px;
+
+    font-size: 14px;
+}
+
+
+.category-row strong {
+    font-size: 14px;
+}
+
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress-bar {
+    width: 100%;
+
+    height: 8px;
+
+    margin-top: 7px;
+
+    background: #e5e5e5;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.progress-fill {
+    width: 0;
+
+    height: 100%;
+
+    background: #333;
+
+    border-radius: 10px;
+
+    transition: width 0.7s ease;
+}
+
+
+/* =========================================
+   SUGGESTIONS
+========================================= */
+
+.suggestions-card {
+    grid-column: 1 / -1;
+
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 15px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+.suggestions-card h2 {
+    margin: 0 0 18px;
+
+    font-size: 20px;
+}
+
+
+.suggestions-card ul {
+    margin: 0;
+
+    padding-left: 22px;
+}
+
+
+.suggestions-card li {
+    margin-bottom: 10px;
+
+    line-height: 1.5;
+
+    color: #444;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar-container {
+        padding: 0 15px;
+    }
+
+
+    .navbar-brand {
+        font-size: 21px;
+    }
+
+
+    .nav-button {
+        padding: 7px 12px;
+
+        font-size: 13px;
+    }
+
+
+    .ats-container {
+        padding: 35px 15px 60px;
+    }
+
+
+    .page-title {
+        font-size: 27px;
+    }
+
+
+    .result-section {
+        grid-template-columns: 1fr;
+    }
+
+
+    .suggestions-card {
+        grid-column: auto;
+    }
+
+}

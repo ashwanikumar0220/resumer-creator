@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Import Your Resume · Resumer</title>
+    <meta name="description"
+        content="Upload your existing resume, improve your content, and prepare for your next opportunity.">
+
+    <link rel="stylesheet" href="/static/css/editor.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="/" class="logo">resumer<span>.</span></a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="/create-resume">Templates</a>
+            <a href="/ats">ATS Checker</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="/create-resume" class="nav-button">
+                Start from scratch
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- UPLOAD SECTION -->
+        <section class="upload-section" id="upload">
+
+            <div class="section-heading">
+                <p class="eyebrow">STEP 01 · GET STARTED</p>
+
+                <h2>
+                    Bring your resume.<br>
+                    <span>We'll take it from here.</span>
+                </h2>
+
+                <p>
+                    Choose your existing PDF to extract its information
+                    and continue in the builder.
+                </p>
+            </div>
+
+            <div class="upload-layout">
+
+                <div class="upload-card">
+
+                    <div class="upload-card-heading">
+                        <div class="pdf-icon" aria-hidden="true">
+                            PDF
+                        </div>
+
+                        <div>
+                            <h3>Upload your resume</h3>
+                            <p>Choose a PDF from your device.</p>
+                        </div>
+                    </div>
+
+                    <form id="upload-form">
+
+                        <label class="upload-area" for="pdf-input">
+                            <span class="upload-symbol" aria-hidden="true">↑</span>
+
+                            <strong id="file-name">
+                                Choose your PDF resume
+                            </strong>
+
+                            <span class="upload-hint">
+                                Click to browse your files
+                            </span>
+
+                            <span class="file-requirements">
+                                PDF format · Maximum 10 MB
+                            </span>
+
+                            <input id="pdf-input" name="file" type="file" accept=".pdf,application/pdf" required>
+                        </label>
+
+                        <p class="form-message" id="upload-message" role="status" aria-live="polite"></p>
+
+                        <button class="primary-button" id="upload-button" type="submit">
+                            Upload and continue
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                    </form>
+
+                    <p class="privacy-note">
+                        Upload your own resume. Review the extracted details
+                        before using your finished document.
+                    </p>
+
+                    <div class="or-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <a class="text-link" href="/create-resume">
+                        Create a new resume from scratch →
+                    </a>
+
+                </div>
+
+                <!-- PROCESS STEPS -->
+                <aside class="process-card">
+
+                    <p class="eyebrow">YOUR NEXT THREE STEPS</p>
+
+                    <div class="process-step">
+                        <span class="step-number">01</span>
+
+                        <div>
+                            <h3>Upload</h3>
+                            <p>
+                                Start with the experience and details
+                                you already have.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"></div>
+
+                    <div class="process-step">
+                        <span class="step-number">02</span>
+
+                        <div>
+                            <h3>Refine</h3>
+                            <p>
+                                Review the extracted information and
+                                improve your content.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step-connector"></div>
+
+                    <div class="process-step">
+                        <span class="step-number">03</span>
+
+                        <div>
+                            <h3>Move forward</h3>
+                            <p>
+                                Continue editing and prepare your resume
+                                for your next application.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="process-quote">
+                        <span class="quote-mark">“</span>
+
+                        <p>
+                            Don't underestimate what you've done.
+                            Learn to show its value.
+                        </p>
+
+                        <span class="quote-caption">
+                            A REMINDER FOR YOUR NEXT APPLICATION
+                        </span>
+                    </div>
+
+                </aside>
+
+            </div>
+        </section>
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-content">
+                <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+
+                <h1>
+                    Your experience<br>
+                    <span>deserves to stand out.</span>
+                </h1>
+
+                <p class="hero-description">
+                    You have already done the work. Now let's present it
+                    in a way that helps recruiters see your value.
+                    Upload your existing resume and continue editing.
+                </p>
+
+                <div class="hero-points">
+                    <div class="hero-point">
+                        <span class="check">✓</span>
+                        Extract your resume details
+                    </div>
+
+                    <div class="hero-point">
+                        <span class="check">✓</span>
+                        Review and edit your information
+                    </div>
+
+                    <div class="hero-point">
+                        <span class="check">✓</span>
+                        Continue in the resume builder
+                    </div>
+                </div>
+
+                <p class="hero-note">
+                    A better first impression begins with a clearer story.
+                </p>
+            </div>
+
+            <!-- CSS RESUME ILLUSTRATION -->
+            <div class="hero-visual" aria-hidden="true">
+
+                <div class="floating-note note-top">
+                    <span class="note-check">✓</span>
+                    Ready for a fresh start
+                </div>
+
+                <div class="resume-illustration">
+
+                    <div class="illustration-header">
+                        <div class="illustration-avatar"></div>
+
+                        <div class="illustration-heading">
+                            <div class="skeleton name-skeleton"></div>
+                            <div class="skeleton role-skeleton"></div>
+                            <div class="skeleton contact-skeleton"></div>
+                        </div>
+                    </div>
+
+                    <div class="illustration-section">
+                        <div class="section-line"></div>
+                        <div class="skeleton line-long"></div>
+                        <div class="skeleton line-medium"></div>
+                        <div class="skeleton line-short"></div>
+                    </div>
+
+                    <div class="illustration-section">
+                        <div class="section-line"></div>
+
+                        <div class="illustration-experience">
+                            <div class="experience-marker"></div>
+                            <div class="experience-lines">
+                                <div class="skeleton line-long"></div>
+                                <div class="skeleton line-medium"></div>
+                                <div class="skeleton line-short"></div>
+                            </div>
+                        </div>
+
+                        <div class="illustration-experience">
+                            <div class="experience-marker"></div>
+                            <div class="experience-lines">
+                                <div class="skeleton line-long"></div>
+                                <div class="skeleton line-medium"></div>
+                                <div class="skeleton line-short"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="illustration-section">
+                        <div class="section-line"></div>
+
+                        <div class="skill-lines">
+                            <span>Skills</span>
+                            <span>Projects</span>
+                            <span>Education</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="floating-note note-bottom">
+                    <span class="note-number">01</span>
+                    Your story, presented better.
+                </div>
+
+                <div class="visual-caption">
+                    <span class="caption-line"></span>
+                    <span>MAKE YOUR EXPERIENCE COUNT</span>
+                </div>
+
+            </div>
+        </section>
+        <!-- MOTIVATIONAL STATEMENT -->
+        <section class="closing-section">
+            <p class="eyebrow">BEFORE YOU HIT APPLY</p>
+
+            <h2>
+                Your resume doesn't define your worth.
+                <span>It helps others discover your value.</span>
+            </h2>
+
+            <p>
+                Make your experience clear. Make your strengths visible.
+                Take the next step with confidence.
+            </p>
+
+            <a href="/create-resume" class="closing-link">
+                Explore resume templates →
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="/" class="logo">resumer<span>.</span></a>
+
+        <p>Make your first impression count.</p>
+
+        <a href="/ats">Check ATS readiness</a>
+    </footer>
+
+    <script src="/static/js/editor.js" defer></script>
+
+</body>
+
+</html>

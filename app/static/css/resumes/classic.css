@@ -1,0 +1,4 @@
+/* Classic template-specific styling. Shared document behavior lives in resume-builder.css. */
+.template-classic .resume-header{text-align:center}
+.template-classic .resume-section h2{color:#253750}
+.template-classic .resume-entry{break-inside:avoid}

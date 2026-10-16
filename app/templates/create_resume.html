@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose a Resume Template</title>
+  <link rel="stylesheet" href="/static/css/create-resume.css">
+</head>
+<body>
+  <header class="gallery-nav">
+    <a class="wordmark" href="/home">resume<span>.</span></a>
+    <a class="back-link" href="/home">← Back to home</a>
+  </header>
+  <main class="gallery-main">
+    <div class="gallery-intro">
+      <p class="eyebrow">STEP 1 OF 2 · CHOOSE YOUR DESIGN</p>
+      <h1>Start with a template.<br><span>Make it yours.</span></h1>
+      <p class="intro-copy">Choose a layout to begin. Add your details one step at a time and see your resume update live.</p>
+    </div>
+    <section class="template-grid" aria-label="Resume templates">
+      {% for item in templates %}
+      <article class="template-card">
+        <a class="template-preview-link" href="/create-resume/build/{{ item.id }}" aria-label="Choose {{ item.name }} template">
+          <div class="template-preview {{ item.id }}-sample">
+            <div class="mini-page {{ item.id }}-page">
+              <div class="mini-header">
+                <div class="mini-eyebrow">CURRICULUM VITAE</div>
+                <div class="mini-name">YOUR NAME</div>
+                <div class="mini-role">Professional title · email · location</div>
+                <div class="mini-rule"></div>
+              </div>
+              <div class="mini-columns {% if item.id in ['sidebar', 'split-layout', 'dark-sidebar'] %}has-rail{% endif %}">
+                <aside class="mini-rail">
+                  <div class="mini-heading">SKILLS</div>
+                  <div class="mini-line w90"></div><div class="mini-line w75"></div><div class="mini-line w85"></div>
+                  <div class="mini-heading">CONTACT</div>
+                  <div class="mini-line"></div><div class="mini-line w75"></div>
+                </aside>
+                <div class="mini-main">
+                  <div class="mini-heading">PROFILE</div>
+                  <div class="mini-line"></div><div class="mini-line w85"></div><div class="mini-line w95"></div>
+                  <div class="mini-heading">EXPERIENCE</div>
+                  <div class="mini-bold">Position / Company</div>
+                  <div class="mini-line"></div><div class="mini-line w90"></div><div class="mini-line w75"></div>
+                  <div class="mini-heading">EDUCATION</div>
+                  <div class="mini-bold">Degree / Institution</div><div class="mini-line w85"></div>
+                  <div class="mini-heading">PROJECTS</div><div class="mini-line w95"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <div class="template-card-info">
+          <div><span class="template-tag">{{ item.tag }}</span><h2>{{ item.name }}</h2><p>{{ item.description }}</p></div>
+          <a class="choose-button" href="/create-resume/build/{{ item.id }}">Use template <span>→</span></a>
+        </div>
+      </article>
+      {% endfor %}
+    </section>
+    <p class="gallery-note">Your resume information stays separate from the design. You can choose a different template without re-entering your details.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore company and job-specific resume guidance.">
+    <title>Company Intelligence | Resume Builder</title>
+    <link rel="stylesheet" href="/static/css/company-intelligence.css">
+</head>
+
+<body>
+    <header class="ci-navbar">
+        <a href="/home" class="ci-logo">resume<span>.</span></a>
+        <nav>
+            <a href="/home">Home</a>
+            <a href="/company-intelligence" class="active">Companies</a>
+        </nav>
+        <a href="/create-resume" class="ci-nav-button">Build Resume ↗</a>
+    </header>
+
+    <main>
+        <section class="ci-hero">
+            <div class="ci-eyebrow">✦ CAREER GUIDANCE, BUILT AROUND YOUR GOALS</div>
+            <h1>Build a resume for your <span>next big opportunity.</span></h1>
+            <p>
+                Explore role-specific skills, understand job requirements, and
+                create a resume tailored to the position you want.
+            </p>
+
+            <div class="ci-company-chips" id="company-chips">
+                <button type="button" data-company="Google">Google</button>
+                <button type="button" data-company="Microsoft">Microsoft</button>
+                <button type="button" data-company="Amazon">Amazon</button>
+                <button type="button" data-company="Oracle">Oracle</button>
+                <button type="button" data-company="Meta">Meta</button>
+                <button type="button" data-company="Apple">Apple</button>
+                <button type="button" data-company="TCS">TCS</button>
+                <button type="button" data-company="Infosys">Infosys</button>
+                <button type="button" data-company="Adobe">Adobe</button>
+            </div>
+
+            <form class="ci-search" id="company-search-form">
+                <span aria-hidden="true">⌕</span>
+                <input id="company-search" type="search" placeholder="Search a company or role..." autocomplete="off"
+                    maxlength="100">
+                <button type="submit">Search →</button>
+            </form>
+            <div id="search-results" class="ci-search-results" hidden></div>
+        </section>
+
+        <section class="ci-dashboard" id="company-dashboard">
+            <div class="ci-dashboard-head">
+                <div class="ci-company-identity">
+                    <div class="ci-company-symbol" id="company-symbol">G</div>
+                    <div>
+                        <h2 id="company-name">Google</h2>
+                        <p id="company-description">Technology, search, cloud computing, and AI.</p>
+                    </div>
+                </div>
+                <a id="career-link" href="https://www.google.com/about/careers/" target="_blank"
+                    rel="noopener noreferrer">Official careers ↗</a>
+            </div>
+
+            <div class="ci-role-picker">
+                <label for="target-role">Your target role</label>
+                <select id="target-role">
+                    <option>Software Engineer</option>
+                </select>
+                <button id="use-for-resume" type="button" class="ci-primary">
+                    Use This for My Resume ↗
+                </button>
+            </div>
+
+            <div class="ci-grid">
+                <article class="ci-card">
+                    <span class="ci-card-icon">⌘</span>
+                    <h3>Useful skills</h3>
+                    <p class="ci-muted">Starter guidance, not a confirmed job requirement.</p>
+                    <div id="company-skills" class="ci-tags"></div>
+                </article>
+
+                <article class="ci-card">
+                    <span class="ci-card-icon">{"</>"}</span>
+                    <h3>Programming languages</h3>
+                    <p class="ci-muted">Prioritize the languages relevant to your role.</p>
+                    <div id="company-languages" class="ci-tags"></div>
+                </article>
+
+                <article class="ci-card">
+                    <span class="ci-card-icon">✦</span>
+                    <h3>Resume tips</h3>
+                    <ul id="company-tips" class="ci-tips"></ul>
+                </article>
+
+                <article class="ci-card ci-job-card">
+                    <span class="ci-card-icon">▤</span>
+                    <h3>Analyze a real job description</h3>
+                    <p>
+                        Paste a vacancy to extract its stated skills, keywords,
+                        preferred qualifications, and resume recommendations.
+                    </p>
+                    <label for="job-description">Job description</label>
+                    <textarea id="job-description" rows="7" maxlength="15000"
+                        placeholder="Paste the job description here..."></textarea>
+                    <button type="button" id="analyze-job" class="ci-primary">
+                        ✦ Analyze Requirements
+                    </button>
+                    <p id="analysis-status" role="status" aria-live="polite"></p>
+                </article>
+
+                <article class="ci-card ci-results-card" id="analysis-results" hidden>
+                    <h3>Job analysis</h3>
+                    <p id="analysis-summary"></p>
+
+                    <h4>Required skills</h4>
+                    <div id="required-skills" class="ci-tags"></div>
+
+                    <h4>Preferred skills</h4>
+                    <div id="preferred-skills" class="ci-tags"></div>
+
+                    <h4>Keywords from the posting</h4>
+                    <div id="job-keywords" class="ci-tags"></div>
+
+                    <h4>Resume recommendations</h4>
+                    <ul id="job-tips" class="ci-tips"></ul>
+
+                    <h4>Things to clarify</h4>
+                    <ul id="job-unknowns" class="ci-tips"></ul>
+
+                    <button id="apply-analysis" class="ci-primary" type="button">
+                        Use This Guidance for My Resume ↗
+                    </button>
+                </article>
+            </div>
+
+            <p class="ci-disclaimer">
+                Company profiles provide general starting guidance. Requirements vary
+                by vacancy. Always check the employer's official job listing.
+                AI-generated analysis may contain errors.
+            </p>
+        </section>
+    </main>
+
+    <footer class="ci-footer">
+        <a href="/home" class="ci-logo">resume<span>.</span></a>
+        <span>Make your experience count.</span>
+    </footer>
+
+    <script src="/static/js/company-intelligence.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+/* Modern template-specific styling. Shared document behavior lives in resume-builder.css. */
+.template-modern .modern-header{background:#1f3451}
+.template-modern .modern-layout{display:grid;grid-template-columns:32% minmax(0,1fr)}
+.template-modern .modern-sidebar{background:#f0f3f8}

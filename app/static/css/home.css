@@ -1,0 +1,1507 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f4;
+    color: #171717;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 25px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 100;
+
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+    color: #171717;
+    text-decoration: none;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #777;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: #666;
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color 0.2s ease;
+}
+
+.navbar nav a:hover {
+    color: #111;
+}
+
+
+/* =========================================================
+   LOGIN / SIGNUP
+========================================================= */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-button {
+    color: #171717;
+    text-decoration: none;
+
+    padding: 10px 15px;
+
+    font-size: 14px;
+
+    transition: opacity 0.2s ease;
+}
+
+.login-button:hover {
+    opacity: 0.6;
+}
+
+.signup-button {
+    background: #171717;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 11px 17px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.signup-button:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    max-width: 1200px;
+    min-height: 700px;
+
+    margin: auto;
+
+    padding: 80px 30px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.hero-left {
+    max-width: 600px;
+}
+
+.small-text {
+    color: #777;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 70px;
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #777;
+}
+
+.hero-description {
+    max-width: 520px;
+
+    color: #666;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 14px;
+
+    margin-top: 30px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   CREATE MY RESUME
+========================================================= */
+
+.create-resume-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 15px 24px;
+
+    background: #111;
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.create-resume-button:hover {
+    background: #111;
+
+    color: #fff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.18);
+}
+
+
+/* =========================================================
+   EXISTING BUTTON ROW
+========================================================= */
+
+.button-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   BUILD MY RESUME
+========================================================= */
+
+.primary-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 14px 24px;
+
+    background: #fff;
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border: 1px solid #dcdcdc;
+
+    border-radius: 8px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.primary-button:hover {
+    background: #f5f5f5;
+
+    color: #000;
+
+    border-color: #bbb;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CHECK ATS SCORE
+========================================================= */
+
+.secondary-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 14px 24px;
+
+    background: #fff;
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border: 1px solid #dcdcdc;
+
+    border-radius: 8px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.secondary-button:hover {
+    background: #f5f5f5;
+
+    color: #000;
+
+    border-color: #bbb;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TEXT BUTTON
+========================================================= */
+
+.text-button {
+    color: #222;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: opacity 0.2s ease;
+}
+
+.text-button:hover {
+    opacity: 0.55;
+}
+
+.trust {
+    color: #888;
+
+    font-size: 12px;
+
+    margin-top: 22px;
+}
+
+
+/* =========================================================
+   HERO RESUME VISUAL
+========================================================= */
+
+.hero-right {
+    position: relative;
+
+    height: 540px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.resume {
+    width: 360px;
+    height: 480px;
+
+    background: white;
+
+    padding: 35px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+
+    transform: rotate(2deg);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.resume-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #ddd;
+}
+
+.name-line {
+    width: 110px;
+    height: 9px;
+
+    background: #222;
+
+    margin-bottom: 7px;
+}
+
+.role-line {
+    width: 70px;
+    height: 6px;
+
+    background: #ddd;
+}
+
+.line {
+    width: 100%;
+    height: 6px;
+
+    background: #e5e5e5;
+
+    margin-bottom: 8px;
+}
+
+.line.big {
+    width: 80%;
+}
+
+.line.small {
+    width: 55%;
+}
+
+.resume h4 {
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    margin-top: 28px;
+
+    margin-bottom: 15px;
+}
+
+.experience {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 7px;
+    height: 7px;
+
+    background: #222;
+
+    border-radius: 50%;
+
+    margin-top: 2px;
+}
+
+.experience>div:last-child {
+    flex: 1;
+}
+
+.skills {
+    display: flex;
+
+    gap: 5px;
+
+    flex-wrap: wrap;
+}
+
+.skills span {
+    background: #eeeeeb;
+
+    padding: 5px 7px;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   FLOATING CARD
+========================================================= */
+
+.floating-card {
+    position: absolute;
+
+    top: 45px;
+    right: 5px;
+
+    background: white;
+
+    padding: 13px 17px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+
+    font-size: 12px;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.section-label {
+    color: #888;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.statement,
+.comparison,
+.process,
+.features,
+.quotes,
+.final {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 130px 30px;
+}
+
+
+/* =========================================================
+   STATEMENT
+========================================================= */
+
+.statement {
+    text-align: center;
+}
+
+.statement h2 {
+    max-width: 900px;
+
+    margin: auto;
+
+    margin-bottom: 30px;
+
+    font-size: 55px;
+
+    line-height: 1.1;
+
+    letter-spacing: -3px;
+}
+
+.statement h2 span {
+    display: block;
+
+    color: #888;
+}
+
+.statement>p:last-child {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #666;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   ATS SECTION
+========================================================= */
+
+.ats-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 100px 30px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.ats-content h2 {
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.ats-content h2 span {
+    display: block;
+
+    color: #888;
+}
+
+.ats-content>p:not(.section-label) {
+    color: #666;
+
+    line-height: 1.7;
+
+    max-width: 500px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   ATS CARD
+========================================================= */
+
+.ats-card {
+    background: #171717;
+
+    color: white;
+
+    padding: 35px;
+
+    border-radius: 14px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.ats-card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.ats-card-top span {
+    color: #bbb;
+
+    font-size: 14px;
+}
+
+.ats-card-top strong {
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   ATS BAR
+========================================================= */
+
+.ats-bar {
+    width: 100%;
+
+    height: 10px;
+
+    background: #333;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 30px;
+}
+
+.ats-progress {
+    width: 0;
+
+    height: 100%;
+
+    background: white;
+
+    border-radius: 20px;
+
+    transition: width 1.5s ease;
+}
+
+.ats-progress.animate {
+    width: 85%;
+}
+
+
+/* =========================================================
+   ATS CHECK ITEMS
+========================================================= */
+
+.ats-items {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.ats-items div {
+    padding: 12px;
+
+    background: #222;
+
+    border-radius: 7px;
+
+    color: #bbb;
+
+    font-size: 13px;
+}
+
+.ats-items span {
+    color: white;
+
+    margin-right: 5px;
+}
+
+.ats-note {
+    color: #888;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   COMPARISON
+========================================================= */
+
+.comparison {
+    text-align: center;
+}
+
+.comparison h2 {
+    font-size: 48px;
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 60px;
+}
+
+.comparison h2 span {
+    color: #888;
+}
+
+.comparison-box {
+    display: grid;
+
+    grid-template-columns: 1fr 70px 1fr;
+
+    align-items: center;
+
+    text-align: left;
+}
+
+.example {
+    min-height: 300px;
+
+    padding: 35px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 12px;
+}
+
+.example.after {
+    background: #171717;
+
+    color: white;
+
+    border: none;
+}
+
+.example .label {
+    color: #888;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+}
+
+.example h3 {
+    margin-bottom: 20px;
+}
+
+.example p {
+    color: #777;
+
+    margin-bottom: 15px;
+}
+
+.example.after p {
+    color: #bbb;
+}
+
+.example small {
+    display: block;
+
+    color: #888;
+
+    margin-top: 30px;
+}
+
+.arrow {
+    text-align: center;
+
+    font-size: 30px;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process {
+    text-align: center;
+}
+
+.process h2 {
+    font-size: 52px;
+
+    line-height: 1.1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 60px;
+}
+
+.process h2 span {
+    color: #888;
+}
+
+.process-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    text-align: left;
+}
+
+.process-card {
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    min-height: 260px;
+
+    position: relative;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+}
+
+.number {
+    position: absolute;
+
+    top: 25px;
+
+    right: 25px;
+
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+.process-icon {
+    font-size: 30px;
+
+    margin-bottom: 35px;
+}
+
+.process-card h3 {
+    margin-bottom: 10px;
+}
+
+.process-card p {
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.features-left h2 {
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.features-left h2 span {
+    display: block;
+
+    color: #888;
+}
+
+.features-left>p:not(.section-label) {
+    color: #666;
+
+    max-width: 450px;
+
+    margin-bottom: 30px;
+}
+
+.feature {
+    display: flex;
+
+    gap: 25px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.feature>strong {
+    color: #999;
+
+    font-size: 11px;
+}
+
+.feature h3 {
+    margin-bottom: 5px;
+}
+
+.feature p {
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   QUOTES
+========================================================= */
+
+.quotes {
+    text-align: center;
+}
+
+.quote-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    text-align: left;
+}
+
+.quote-card {
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    min-height: 200px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+}
+
+.quote-card span {
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+.quote-card h3 {
+    margin-top: 50px;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final {
+    text-align: center;
+
+    padding-top: 170px;
+
+    padding-bottom: 170px;
+}
+
+.final h2 {
+    max-width: 850px;
+
+    margin: auto;
+
+    margin-bottom: 25px;
+
+    font-size: 60px;
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+}
+
+.final h2 span {
+    display: block;
+
+    color: #888;
+}
+
+.final>p:not(.section-label) {
+    color: #666;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    border-top: 1px solid #ddd;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+footer p {
+    color: #888;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding-top: 50px;
+    }
+
+    .hero-left {
+        margin: auto;
+    }
+
+    .hero-description {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+
+    .hero-right {
+        margin-top: 30px;
+    }
+
+    .ats-section {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .comparison-box {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+
+    .process-container {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .quote-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .login-button {
+        display: none;
+    }
+
+    .signup-button {
+        padding: 9px 13px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    /*
+       On mobile the two existing buttons
+       become stacked as well.
+    */
+    .button-row {
+        grid-template-columns: 1fr;
+    }
+
+    .create-resume-button,
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .hero-right {
+        height: 470px;
+    }
+
+    .resume {
+        width: 290px;
+
+        height: 410px;
+
+        padding: 28px;
+    }
+
+    .floating-card {
+        display: none;
+    }
+
+    .statement h2 {
+        font-size: 38px;
+    }
+
+    .comparison h2,
+    .process h2,
+    .features-left h2 {
+        font-size: 40px;
+    }
+
+    .final h2 {
+        font-size: 42px;
+    }
+
+    .ats-section {
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
+
+    .ats-content h2 {
+        font-size: 40px;
+    }
+
+    .ats-items {
+        grid-template-columns: 1fr;
+    }
+
+    .quotes {
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
+
+    .statement,
+    .comparison,
+    .process,
+    .features,
+    .final {
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+}
+
+.company-promo {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    align-items: center;
+    gap: 32px;
+    max-width: 1380px;
+    margin: 40px auto;
+    padding: clamp(28px, 5vw, 64px);
+    overflow: hidden;
+    border: 1px solid #e6e4ff;
+    border-radius: 30px;
+    background:
+        radial-gradient(circle at 90% 15%, #e4e9ff, transparent 35%),
+        radial-gradient(circle at 10% 100%, #f1e6ff, transparent 35%),
+        #fbfaff;
+}
+
+.company-promo-copy {
+    position: relative;
+    z-index: 1;
+}
+
+.company-promo-label {
+    color: #6552e9;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.company-promo h2 {
+    margin: 18px 0 14px;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+}
+
+.company-promo h2 span {
+    display: block;
+    color: #6552e9;
+}
+
+.company-promo p {
+    max-width: 530px;
+    color: #686c83;
+    line-height: 1.8;
+}
+
+.company-promo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 15px 20px;
+    border-radius: 13px;
+    background: linear-gradient(110deg, #6654f5, #3675fa);
+    color: white;
+    font-weight: 750;
+    box-shadow: 0 10px 25px #6654f52b;
+}
+
+.company-promo-visual {
+    position: relative;
+    min-height: 300px;
+    display: grid;
+    place-items: center;
+}
+
+.company-promo-orbit {
+    position: absolute;
+    width: 245px;
+    height: 245px;
+    border: 1px dashed #bdb5ff;
+    border-radius: 50%;
+}
+
+.orbit-two {
+    width: 175px;
+    height: 175px;
+    border-color: #d4c8ff;
+}
+
+.promo-center-icon {
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #e5dfff;
+    border-radius: 25px;
+    background: white;
+    color: #6953f4;
+    font-size: 35px;
+    box-shadow: 0 15px 40px #6654f52a;
+}
+
+.promo-company {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 15px;
+    border: 1px solid #e8e8f4;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 10px 28px #20234c13;
+    font-size: 13px;
+    font-weight: 800;
+    transition: transform 0.3s ease;
+}
+
+.promo-company:hover {
+    transform: scale(1.1);
+}
+
+.promo-google {
+    top: 8%;
+    left: 0;
+    color: #4285f4;
+}
+
+.promo-microsoft {
+    top: 15%;
+    right: 0;
+    color: #3977ed;
+}
+
+.promo-oracle {
+    bottom: 13%;
+    left: 2%;
+    color: #e43d40;
+}
+
+.promo-amazon {
+    right: 0;
+    bottom: 8%;
+    color: #ed9b16;
+}
+
+@media (max-width: 700px) {
+    .company-promo {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 22px 12px;
+        padding: 25px 20px;
+        border-radius: 23px;
+    }
+
+    .company-promo-visual {
+        min-height: 245px;
+    }
+
+    .company-promo-orbit {
+        width: 205px;
+        height: 205px;
+    }
+
+    .orbit-two {
+        width: 145px;
+        height: 145px;
+    }
+
+    .promo-company {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+
+
+a {
+    text-decoration: none
+}

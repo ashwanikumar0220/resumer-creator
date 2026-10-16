@@ -1,0 +1,23 @@
+[project]
+name = "resumer"
+version = "0.1.0"
+description = "Resume builder and editor"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.143.1",
+    "groq>=1.7.0",
+    "jinja2>=3.1.6",
+    "pwdlib[argon2]>=0.3.1",
+    "pyjwt>=2.15.1",
+    "pymongo>=4.18.3",
+    "pymupdf>=1.28.2",
+    "python-dotenv>=1.2.4",
+    "python-multipart>=0.0.32",
+    "uvicorn[standard]>=0.54.0",
+]
+
+# This is an application run directly from app/main.py, not a distributable
+# Python package. Prevent uv from trying to build a missing src/resumer package.
+[tool.uv]
+package = false

@@ -1,0 +1,783 @@
+/* ==========================================
+   COMPANY INTELLIGENCE
+   Minimal Luxury Design System
+   ========================================== */
+
+:root {
+    --ci-ink: #171717;
+    --ci-muted: #707070;
+    --ci-line: #deded9;
+    --ci-background: #f7f7f4;
+    --ci-surface: #ffffff;
+    --ci-hover: #f1f1ed;
+    --ci-radius: 14px;
+    --ci-transition: 0.2s ease;
+}
+
+/* Reset */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--ci-background);
+    color: var(--ci-ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #777777;
+    outline-offset: 3px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Navigation */
+
+.ci-navbar {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px max(5%, calc((100% - 1380px) / 2));
+    background: rgba(247, 247, 244, 0.96);
+    border-bottom: 1px solid var(--ci-line);
+    backdrop-filter: blur(14px);
+}
+
+.ci-logo {
+    flex-shrink: 0;
+    color: var(--ci-ink);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.ci-logo span {
+    color: #858585;
+}
+
+.ci-navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    color: var(--ci-muted);
+    font-size: 14px;
+}
+
+.ci-navbar nav a {
+    transition: color var(--ci-transition);
+}
+
+.ci-navbar nav a:hover,
+.ci-navbar nav a.active {
+    color: var(--ci-ink);
+}
+
+.ci-navbar nav a.active {
+    font-weight: 700;
+}
+
+.ci-nav-button {
+    padding: 11px 17px;
+    border: 1px solid var(--ci-ink);
+    border-radius: 8px;
+    background: var(--ci-ink);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background var(--ci-transition),
+        transform var(--ci-transition);
+}
+
+.ci-nav-button:hover {
+    background: #333333;
+    transform: translateY(-1px);
+}
+
+/* Hero section */
+
+.ci-hero {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 72px 24px 42px;
+    text-align: center;
+}
+
+.ci-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border: 1px solid var(--ci-line);
+    border-radius: 30px;
+    background: #ffffff;
+    color: #555555;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.ci-hero h1 {
+    max-width: 880px;
+    margin: 23px auto 16px;
+    color: var(--ci-ink);
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 750;
+    line-height: 1.1;
+    letter-spacing: -2.5px;
+}
+
+.ci-hero h1 span {
+    display: block;
+    color: #777777;
+}
+
+.ci-hero>p {
+    max-width: 690px;
+    margin: 0 auto;
+    color: var(--ci-muted);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+/* Company selector */
+
+.ci-company-chips {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 29px auto 23px;
+}
+
+.ci-company-chips button {
+    padding: 10px 16px;
+    border: 1px solid var(--ci-line);
+    border-radius: 30px;
+    background: #ffffff;
+    color: #333333;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background var(--ci-transition),
+        color var(--ci-transition),
+        border-color var(--ci-transition);
+}
+
+.ci-company-chips button:hover,
+.ci-company-chips button.selected {
+    border-color: var(--ci-ink);
+    background: var(--ci-ink);
+    color: #ffffff;
+}
+
+/* Company search */
+
+.ci-search {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 7px;
+    border: 1px solid var(--ci-line);
+    border-radius: 12px;
+    background: #ffffff;
+    transition: border-color var(--ci-transition);
+}
+
+.ci-search:focus-within {
+    border-color: #999999;
+}
+
+.ci-search>span {
+    padding-left: 13px;
+    color: #777777;
+    font-size: 27px;
+    line-height: 1;
+}
+
+.ci-search input {
+    min-width: 0;
+    flex: 1;
+    padding: 12px 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--ci-ink);
+}
+
+.ci-search input::placeholder {
+    color: #929292;
+}
+
+.ci-search button,
+.ci-primary {
+    padding: 12px 19px;
+    border: 1px solid var(--ci-ink);
+    border-radius: 8px;
+    background: var(--ci-ink);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background var(--ci-transition),
+        transform var(--ci-transition);
+}
+
+.ci-search button {
+    flex-shrink: 0;
+    border-radius: 8px;
+}
+
+.ci-search button:hover,
+.ci-primary:hover {
+    background: #333333;
+    transform: translateY(-1px);
+}
+
+/* Search suggestions */
+
+.ci-search-results {
+    max-width: 740px;
+    margin: 10px auto 0;
+    padding: 8px;
+    border: 1px solid var(--ci-line);
+    border-radius: 12px;
+    background: #ffffff;
+    text-align: left;
+}
+
+.ci-search-results button {
+    width: 100%;
+    padding: 12px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #333333;
+    text-align: left;
+}
+
+.ci-search-results button:hover {
+    background: var(--ci-hover);
+}
+
+/* Main dashboard */
+
+.ci-dashboard {
+    max-width: 1380px;
+    margin: 0 auto 55px;
+    padding: 26px;
+    border: 1px solid var(--ci-line);
+    border-radius: 18px;
+    background: #ffffff;
+}
+
+.ci-dashboard-head,
+.ci-company-identity,
+.ci-role-picker {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ci-dashboard-head {
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.ci-company-identity {
+    min-width: 0;
+}
+
+.ci-company-symbol {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border: 1px solid var(--ci-line);
+    border-radius: 12px;
+    background: #f4f4f0;
+    color: var(--ci-ink);
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.ci-company-identity h2 {
+    margin: 0 0 5px;
+    color: var(--ci-ink);
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.ci-company-identity p {
+    margin: 0;
+    color: var(--ci-muted);
+    font-size: 13px;
+}
+
+#career-link {
+    color: #333333;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#career-link:hover {
+    text-decoration: underline;
+}
+
+/* Target role selector */
+
+.ci-role-picker {
+    flex-wrap: wrap;
+    margin: 25px 0;
+    padding: 18px;
+    border: 1px solid #e5e5df;
+    border-radius: 12px;
+    background: #f8f8f5;
+}
+
+.ci-role-picker label {
+    color: #333333;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.ci-role-picker select {
+    min-width: 190px;
+    flex: 1;
+    padding: 11px 12px;
+    border: 1px solid var(--ci-line);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--ci-ink);
+}
+
+.ci-role-picker select option {
+    background: #ffffff;
+    color: var(--ci-ink);
+}
+
+.ci-role-picker .ci-primary {
+    white-space: normal;
+}
+
+/* Information card grid */
+
+.ci-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.ci-card {
+    min-width: 0;
+    padding: 23px;
+    border: 1px solid #e2e2dc;
+    border-radius: var(--ci-radius);
+    background: #ffffff;
+    transition: border-color var(--ci-transition),
+        transform var(--ci-transition);
+}
+
+.ci-card:hover {
+    border-color: #c4c4bc;
+    transform: translateY(-2px);
+}
+
+.ci-card-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 13px;
+    border: 1px solid #e5e5df;
+    border-radius: 10px;
+    background: #f5f5f1;
+    color: var(--ci-ink);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.ci-card h3 {
+    margin: 0 0 10px;
+    color: var(--ci-ink);
+    font-size: 18px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+}
+
+.ci-card h4 {
+    margin: 20px 0 9px;
+    color: #333333;
+    font-size: 14px;
+}
+
+.ci-card p {
+    color: var(--ci-muted);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.ci-muted {
+    color: #858585 !important;
+    font-size: 12px !important;
+}
+
+/* Skill and keyword tags */
+
+.ci-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ci-tag {
+    display: inline-block;
+    padding: 7px 11px;
+    border: 1px solid #e3e3dd;
+    border-radius: 8px;
+    background: #f6f6f2;
+    color: #333333;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ci-tag.empty {
+    border-color: var(--ci-line);
+    background: #ffffff;
+    color: #929292;
+}
+
+/* Resume guidance lists */
+
+.ci-tips {
+    padding-left: 20px;
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.ci-tips li {
+    padding-left: 3px;
+    margin-bottom: 5px;
+}
+
+.ci-tips li::marker {
+    color: #888888;
+}
+
+/* Job description form */
+
+.ci-job-card textarea {
+    width: 100%;
+    display: block;
+    resize: vertical;
+    margin: 8px 0 13px;
+    padding: 13px;
+    border: 1px solid var(--ci-line);
+    border-radius: 9px;
+    background: #ffffff;
+    color: var(--ci-ink);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.ci-job-card textarea::placeholder {
+    color: #929292;
+}
+
+.ci-job-card textarea:focus {
+    border-color: #888888;
+    outline: none;
+}
+
+.ci-job-card label {
+    display: block;
+    margin-top: 17px;
+    color: #333333;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.ci-job-card .ci-primary,
+.ci-results-card .ci-primary {
+    width: 100%;
+}
+
+#analysis-status {
+    min-height: 18px;
+    margin-bottom: 0;
+    color: var(--ci-muted);
+    font-size: 13px;
+}
+
+/* Job analysis results */
+
+.ci-results-card {
+    grid-column: 1 / -1;
+}
+
+.ci-results-card h3,
+.ci-results-card h4 {
+    color: var(--ci-ink);
+}
+
+.ci-results-card strong {
+    color: var(--ci-ink);
+}
+
+#analysis-summary {
+    color: var(--ci-muted);
+}
+
+/* Disclaimer */
+
+.ci-disclaimer {
+    margin: 23px 2px 0;
+    color: #777777;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* Footer */
+
+.ci-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 5%;
+    border-top: 1px solid var(--ci-line);
+    background: var(--ci-background);
+    color: #777777;
+    font-size: 13px;
+}
+
+.ci-footer .ci-logo {
+    font-size: 24px;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 900px) {
+    .ci-navbar {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    .ci-dashboard {
+        margin-right: 18px;
+        margin-left: 18px;
+    }
+
+    .ci-grid {
+        gap: 14px;
+    }
+
+    .ci-card {
+        padding: 19px;
+    }
+}
+
+@media (max-width: 700px) {
+    .ci-navbar {
+        min-height: 65px;
+        padding: 12px 16px;
+        gap: 10px;
+    }
+
+    .ci-logo {
+        font-size: 23px;
+    }
+
+    .ci-navbar nav {
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .ci-nav-button {
+        padding: 9px 10px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .ci-hero {
+        padding: 46px 16px 28px;
+    }
+
+    .ci-eyebrow {
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .ci-hero h1 {
+        font-size: clamp(34px, 9vw, 46px);
+        letter-spacing: -1.5px;
+    }
+
+    .ci-hero>p {
+        font-size: 14px;
+    }
+
+    .ci-company-chips {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 5px 2px 12px;
+        scrollbar-width: thin;
+    }
+
+    .ci-company-chips button {
+        flex: 0 0 auto;
+    }
+
+    .ci-search {
+        gap: 7px;
+        padding: 6px;
+    }
+
+    .ci-search>span {
+        padding-left: 7px;
+        font-size: 23px;
+    }
+
+    .ci-search input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 12px;
+    }
+
+    .ci-search button {
+        padding: 11px 10px;
+        font-size: 11px;
+    }
+
+    .ci-dashboard {
+        margin: 0 10px 30px;
+        padding: 15px;
+        border-radius: 13px;
+    }
+
+    .ci-dashboard-head {
+        align-items: flex-start;
+    }
+
+    .ci-company-identity {
+        gap: 11px;
+    }
+
+    .ci-company-symbol {
+        width: 46px;
+        height: 46px;
+        font-size: 21px;
+    }
+
+    .ci-company-identity h2 {
+        font-size: 19px;
+    }
+
+    .ci-company-identity p {
+        font-size: 12px;
+    }
+
+    #career-link {
+        font-size: 12px;
+    }
+
+    .ci-role-picker {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 14px;
+    }
+
+    .ci-role-picker select {
+        width: 100%;
+        min-width: 0;
+        flex: auto;
+    }
+
+    .ci-role-picker .ci-primary {
+        width: 100%;
+    }
+
+    .ci-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ci-card {
+        padding: 18px;
+    }
+
+    .ci-results-card {
+        grid-column: auto;
+    }
+
+    .ci-footer {
+        padding: 20px 16px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 380px) {
+    .ci-navbar {
+        gap: 7px;
+    }
+
+    .ci-logo {
+        font-size: 20px;
+    }
+
+    .ci-navbar nav {
+        gap: 8px;
+        font-size: 11px;
+    }
+
+    .ci-nav-button {
+        padding: 8px;
+        font-size: 10px;
+    }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
